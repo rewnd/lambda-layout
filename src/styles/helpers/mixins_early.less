@@ -1,0 +1,9 @@
+.font-face(@fontname, @fontfilename, @fontweight:normal, @fontstyle:normal) {
+  font-family: "@{fontname}";
+  src: url("../fonts/@{fontfilename}.ttf") format("truetype");
+  src: url("../fonts/@{fontfilename}.eot");
+  src: url("../fonts/@{fontfilename}.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/@{fontfilename}.woff") format("woff");
+  font-weight: @fontweight;
+  font-style: @fontstyle;
+}

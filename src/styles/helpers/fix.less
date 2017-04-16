@@ -1,0 +1,28 @@
+//кроссбраузерные фиксы
+
+//скрываем плейсхолдер
+
+input::-webkit-input-placeholder       {opacity: 1; transition: opacity @placeholder-fade-time ease;}
+input::-moz-placeholder                {opacity: 1; transition: opacity @placeholder-fade-time ease;}
+input:-moz-placeholder                 {opacity: 1; transition: opacity @placeholder-fade-time ease;}
+input:-ms-input-placeholder            {opacity: 1; transition: opacity @placeholder-fade-time ease;}
+input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity @placeholder-fade-time ease;}
+input:focus::-moz-placeholder          {opacity: 0; transition: opacity @placeholder-fade-time ease;}
+input:focus:-moz-placeholder           {opacity: 0; transition: opacity @placeholder-fade-time ease;}
+input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity @placeholder-fade-time ease;}
+
+// убираем дефолтные стили для списков
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+//убираем отступы
+body,
+p,
+h1,
+h2 {
+  margin: 0;
+}

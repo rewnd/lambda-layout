@@ -1,0 +1,104 @@
+.reviews-section {
+  .padding-y(100px);
+  background-image: url('../img/5th-block__bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media screen and (max-width: @mobile-bp) {
+    .padding-y(50px);
+    background-image: url('../img/5th-block__bg--mobile.jpg');
+    background-position: center 100%;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 77px;
+    padding-bottom: 78px;
+    width: 770px;
+    background-image: url('../img/3rd-block__content-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+
+    @media screen and (max-width: @desktop-bp) {
+      background-image: none;
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 740px;
+    }
+
+    @media screen and (max-width: @mobile-bp) {
+      width: 100%;
+    }
+  }
+
+  &__content-header {
+    .font-inject-rem(@font--yesevaone, 36px, normal, #ffffff);
+    margin-bottom: 17px;
+  }
+
+  &__content-divider {
+    width: 250px;
+    height: 25px;
+  }
+
+  &__content-carousel {
+    width: 770px;
+    @media screen and (max-width: @desktop-bp) {
+      width: 740px;
+    }
+
+    @media screen and (max-width: @mobile-bp) {
+      width: 100%;
+    }
+  }
+
+  &__content-slide {
+    box-sizing: border-box;
+    .padding-y(25px);
+    .padding-x(70px);
+
+    @media screen and (max-width: @mobile-bp) {
+      .padding-x(20px);
+    }
+  }
+
+  &__content-slide-text {
+    position: relative;
+    margin-bottom: 30px;
+    .font-inject-rem(@font--gentium, 25px, bold, #dde0df, 45px);
+
+    @media screen and (max-width: @mobile-bp) {
+      font-size: 1.1rem;
+      line-height: 1.2em;
+    }
+
+
+    &::before {
+      content:'“';
+      display: block;
+      position: absolute;
+      top: -25px;
+      left: -38px;
+      .font-inject-rem('Georgia', 96px, normal, #979796);
+      user-select: none;
+
+      @media screen and (max-width: @mobile-bp) {
+        display: none;
+      }
+    }
+  }
+
+  &__content-slide-name {
+    .font-inject-rem(@font--lato, 18px, normal, #ffffff);
+  }
+}

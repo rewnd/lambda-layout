@@ -1,0 +1,59 @@
+/* кнопка с тремя полосками для мобильного меню */
+
+.mobile-menu-btn(@width, @height, @linesize, @linecolor) {
+    position: absolute;
+    width: @width;
+    height: @height - @linesize*2;
+    border-top: @linesize solid @linecolor;
+    border-bottom: @linesize solid @linecolor;
+    cursor: pointer;
+    &::after {
+      content: '';
+      position: absolute;
+      width: @width;
+      height: @linesize;
+      top: (@height - @linesize * 3) / 2;
+      background-color: @linecolor;
+    }
+  }
+
+/* Крестик (попапы закрывать), длина диагонали = 1,41421 * длина стороны */
+
+.popup-close-btn(@side, @linesize: 2px, @color: white) {
+
+    position: absolute;
+    width: @side;
+    height: @side;
+    cursor: pointer;
+    &:before,
+    &:after {
+      @height: round(1.41421 * @side);
+      content: "";
+      position: absolute;
+      width: @linesize;
+      height: @height;
+      background-color: @color;
+      top: 0 - round(@height / 2 - @side / 2);
+      left: @side / 2;
+    }
+
+    &:before {
+      transform: rotate(-45deg);
+    }
+
+    &:after {
+      transform: rotate(45deg);
+    }
+}
+
+/* оверлей во весь вьюпорт */
+
+.overlay(@opacity: 0.5, @color: #000) {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: @color;
+    opacity: @opacity;
+  }

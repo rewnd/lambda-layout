@@ -1,0 +1,1 @@
+Исходники верстки http://lambda-adaptive.bitballoon.com

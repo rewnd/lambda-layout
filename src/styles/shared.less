@@ -1,0 +1,43 @@
+//враппер для блоков
+.container {
+  .wrapper(1250px);
+  @media screen and (max-width: @desktop-bp) {
+    width: 740px;
+  }
+  @media screen and (max-width: @mobile-bp) {
+    width: 94%;
+    .margin-x(3%);
+  }
+}
+
+
+
+//разделитель
+
+.divider {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &--white {
+    background-image: url('../img/divider--white.png');
+  }
+
+  &--gray {
+    background-image: url('../img/divider--gray.png');
+  }
+
+  &--gold {
+    background-image: url('../img/divider--gold.png');
+  }
+}
+
+//кнопочка Вверх
+
+.to-top-btn {
+  position: fixed;
+  bottom: 0;
+  right: 10px;
+  font-size: 2rem;
+  color: #cccccc;
+}

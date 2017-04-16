@@ -1,0 +1,100 @@
+//clearfix (apply on the parent css rule)
+.clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+//font
+.font-inject(@fontname, @fontsize, @fontweight: normal, @fontcolor: #000000, @lineheight: 1.2em, @familytype: "sans-serif") when (@familytype=serif) {
+  font-family: "@{fontname}", "Times New Roman", "Times", serif;
+  font-size: @fontsize;
+  font-weight: @fontweight;
+  line-height: @lineheight;
+  color: @fontcolor;
+}
+
+.font-inject(@fontname, @fontsize, @fontweight: normal, @fontcolor: #000000, @lineheight: 1.2em, @familytype: "sans-serif") when not (@familytype=serif) {
+  font-family: "@{fontname}", "Arial", "Helvetica", sans-serif;
+  font-size: @fontsize;
+  font-weight: @fontweight;
+  line-height: @lineheight;
+  color: @fontcolor;
+}
+
+//vertical and horizontal paddings/margins/size
+.padding-x(@pad){
+  padding-right: @pad;
+  padding-left: @pad;
+}
+
+.padding-y(@pad) {
+  padding-top: @pad;
+  padding-bottom: @pad;
+}
+
+.margin-x(@m) {
+  margin-right: @m;
+  margin-left: @m;
+}
+
+.margin-y(@m) {
+  margin-top: @m;
+  margin-bottom: @m;
+}
+
+.size(@size) {
+  width: @size;
+  height: @size;
+}
+
+//content wrapper
+.wrapper(@width) {
+  width: @width;
+  .margin-x(auto);
+}
+
+
+//mixins for responsive layouts
+.percent-width(@element-width, @container-width) {
+  width: unit(round(((@element-width / @container-width) * 100), 5), %);
+}
+
+//convert font sizes and line heights from px to rem
+.fontsize-px2rem(@sizepx) {
+  font-size: unit(round((@sizepx / @font-size--default), 2), rem);
+}
+
+.lineheight-px2rem(@size) when (@size=default) {
+  line-height: 1.2em;
+}
+
+.lineheight-px2rem(@size) when not (@size=default) {
+  line-height: unit(round((@size /  @font-size--default), 2), rem);
+}
+
+.font-inject-rem(@fontname, @fontsize, @fontweight: normal, @fontcolor: #000000, @lineheight:default, @familytype: "sans-serif") when (@familytype=serif) {
+  font-family: "@{fontname}", "Times New Roman", "Times", serif;
+  .fontsize-px2rem(@fontsize);
+  font-weight: @fontweight;
+  .lineheight-px2rem(@lineheight);
+  color: @fontcolor;
+}
+
+.font-inject-rem(@fontname, @fontsize, @fontweight: normal, @fontcolor: #000000, @lineheight:default, @familytype: "sans-serif") when not (@familytype=serif) {
+  font-family: "@{fontname}", "Arial", "Helvetica", sans-serif;
+  .fontsize-px2rem(@fontsize);
+  font-weight: @fontweight;
+  .lineheight-px2rem(@lineheight);
+  color: @fontcolor;
+}
+
+//crossbrowser placeholder styling
+.placeholder(@rules) {
+  &::-webkit-input-placeholder {@rules();}
+  &::-moz-placeholder {@rules();}
+  &:-moz-placeholder {@rules();}
+  &:-ms-input-placeholder {@rules();}
+}

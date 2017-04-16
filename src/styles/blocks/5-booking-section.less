@@ -1,0 +1,198 @@
+.booking-section {
+  .padding-y(100px);
+  background-image: url('../img/2nd-block__bg--pattern.jpg');
+  background-repeat: repeat-x;
+
+  @media screen and (max-width: @mobile-bp) {
+    .padding-y(50px);
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__images {
+    margin-left: 40px;
+    @media screen and (max-width: @desktop-bp) {
+      margin-left: 0;
+    }
+
+    @media screen and (max-width: @mobile-bp) {
+      display: none;
+    }
+  }
+
+  &__img {
+    display: inline-block;
+    margin-right: 30px;
+    &:last-of-type {
+      margin-right: 0;
+
+      @media screen and (max-width: @desktop-bp) {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-width: 430px;
+    margin-right: 110px;
+
+    @media screen and (max-width: @desktop-bp) {
+      margin-right: 0;
+    }
+
+    @media screen and (max-width: @mobile-bp) {
+      max-width: 100%;
+    }
+  }
+
+  &__content-header {
+    margin-bottom: 10px;
+    .font-inject-rem(@font--yesevaone, 36px, normal, @color-gold--headings, 36px);
+    text-align: center;
+  }
+
+  &__content-divider {
+    align-self: center;
+    width: 243px;
+    height: 26px;
+    margin-bottom: 26px;
+  }
+
+  &__content-text {
+    margin-bottom: 14px;
+    .font-inject-rem(@font--lato, 16px, normal, #4c4c4c, 24px);
+    text-align: center;
+    &:last-of-type {
+      margin-bottom: 37px;
+    }
+  }
+
+  &__content-form {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      .font-inject-rem(@font--opensans, 14px, bold, @color-gold--form);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select {
+      box-sizing: border-box;
+      padding-left: 15px;
+      .padding-y(8px);
+      margin-bottom: 30px;
+      width: 100%;
+      .font-inject-rem(@font--opensans, 16px, normal, #7c7c7c);
+      font-style: italic;
+      .placeholder({
+        .font-inject-rem(@font--opensans, 16px, normal, #7c7c7c);
+        font-style: italic;
+        });
+      border: 1px solid #c8c6c6;
+      outline: none;
+      &:focus {
+        border-color: @color-gold--input-border;
+      }
+    }
+    select {
+      .font-inject-rem(@font--opensans, 16px, normal, #7c7c7c);
+      font-style: italic;
+      appearance: none;
+    }
+    option {
+      font-style: normal;
+    }
+  }
+
+  &__content-form-input-wrapper {
+    position: relative;
+    background-color: #ffffff;
+    z-index: 0;
+    &--select {
+      &::after {
+        content: "\f078";
+        position: absolute;
+        top: 12px;
+        right: 15px;
+        display: inline-block;
+        .font-inject(FontAwesome, 10px, normal, #7c7c7c);
+        z-index: 3;
+      }
+      select {
+        position: relative;
+        background-color: transparent;
+        z-index: 5;
+      }
+    }
+
+    &--date {
+      input {
+        position: relative;
+        cursor: pointer;
+        background-color: transparent;
+        z-index: 5;
+      }
+      &::after {
+        content: "\f073";
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        display: inline-block;
+        .font-inject(FontAwesome, 13px, normal, #7c7c7c);
+        cursor: pointer;
+        z-index: 3;
+      }
+    }
+  }
+
+  &__content-form-row {
+    display: flex;
+    flex-direction: row;
+
+    @media screen and (max-width: @mobile-bp) {
+      flex-direction: column;
+    }
+  }
+
+  &__content-form-column {
+    margin-right: 30px;
+    width: 200px;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @media screen and (max-width: @mobile-bp) {
+      margin-right: 0;
+      width: 90vw;
+    }
+  }
+
+  &__content-form-submit-btn {
+    align-self: center;
+    padding: 10px 60px;
+    border: none;
+    outline: none;
+    .font-inject(@font--opensans, 16px, normal, #ffffff);
+    background-color: @color-gold--form;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      background-color: lighten(@color-gold--form, 10%);
+    }
+    &:active {
+      box-shadow: inset 1px 1px 1px #cccccc;
+      transform: translate(1px, 1px);
+    }
+  }
+}

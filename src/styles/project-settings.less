@@ -1,0 +1,69 @@
+//названия шрифтов
+@font--lato: 'Lato';
+@font--gentium: 'Gentium Book Basic';
+@font--yesevaone: 'Yeseva One';
+@font--opensans: 'Open Sans';
+
+//подключение файлов шрифтов (если не используем cdn)
+
+@font-face {
+  .font-face(@font--lato, 'latoregular');
+}
+
+@font-face {
+  .font-face(@font--gentium, 'genbkbasb', bold);
+}
+
+@font-face {
+  .font-face(@font--yesevaone, 'yeoneregular');
+}
+
+@font-face {
+  .font-face(@font--opensans, 'osregular');
+}
+
+@font-face {
+  .font-face(@font--opensans, 'osbold', bold);
+}
+
+@font-face {
+  .font-face(@font--opensans, 'ositalic', normal, italic);
+}
+
+
+//размеры шрифтов
+@font-size--default: 16px; //шрифт body
+
+//цвета
+@font-color--default: #000000;
+@link-top-menu-color: #ffffff;
+@link-top-menu-color--hover: #eeeeee;
+@link-bottom-social-color--hover: #dab33e;
+@color-gold--top-social: #dab33e;
+@color-gold--headings: #cc9900;
+@color-gold--form: #c9a131;
+@color-gold--input-border: #c89f2d;
+@color-gold--menu-items: @color-gold--input-border;
+@color-white: #ffffff;
+
+//время фейда плейсхолдера при фокусе
+@placeholder-fade-time: .3s;
+
+//медиазапросы
+
+@mobile-bp: 760px;
+@desktop-bp: 1250px;
+
+//основное
+
+body,
+html {
+  .font-inject(@font--lato, @font-size--default, normal, @font-color--default);
+  min-width: 320px;
+}
+
+//убираем подчеркивание у ссылок
+
+a {
+  text-decoration: none;
+}
